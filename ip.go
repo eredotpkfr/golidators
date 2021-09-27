@@ -3,7 +3,7 @@ package golidators
 import utils "github.com/eredotpkfr/golidators/internal/utilities"
 
 const (
-	// IP CIDR seperator
+	// IP CIDR separator
 	cidrSep = '/'
 
 	// 0xFF -> 255

@@ -23,7 +23,7 @@ Following validators available on this package:
 - UUID
 
 ## Usage
-Just import and use it
+Just import and use it. Also see documentation at [pkg.go.dev](https://pkg.go.dev/github.com/eredotpkfr/golidators#section-documentation)
 ```go
 package main
 

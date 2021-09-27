@@ -8,11 +8,11 @@ const (
 
 	// 0xFF -> 255
 	ipv4MaxPart = 0xFF
-	ipv4Length   = 4
+	ipv4Length  = 4
 
 	// 0xFFFF -> 65535
 	ipv6MaxPart = 0xFFFF
-	ipv6Length   = 16
+	ipv6Length  = 16
 )
 
 // Ipv4 function for validating IPv4

@@ -6,12 +6,12 @@ const big = 0xFFFFFF
 // SplitOnce does split given string.
 // Returns prefix, suffix, success.
 func SplitOnce(targetStr string, sep byte) (prefix, suffix string, ok bool) {
-    for i := 0; i < len(targetStr); i++ {
-        if targetStr[i] == sep {
-            return targetStr[:i], targetStr[i + 1:], true
-        }
-    }
-    return "", "", false
+	for i := 0; i < len(targetStr); i++ {
+		if targetStr[i] == sep {
+			return targetStr[:i], targetStr[i+1:], true
+		}
+	}
+	return "", "", false
 }
 
 // Xtoi is Hexadecimal to integer.

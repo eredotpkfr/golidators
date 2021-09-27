@@ -1,3 +1,8 @@
+![Workflow](https://github.com/eredotpkfr/golidators/actions/workflows/go.yml/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/eredotpkfr/golidators)](https://goreportcard.com/report/github.com/eredotpkfr/golidators)
+[![Go Reference](https://pkg.go.dev/badge/github.com/eredotpkfr/golidators.svg)](https://pkg.go.dev/github.com/eredotpkfr/golidators)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/eredotpkfr/golidators)](https://golang.org/)
+[![Release](https://img.shields.io/github/v/release/eredotpkfr/golidators)](https://github.com/eredotpkfr/golidators/releases/latest)
 # golidators
 Golidators is a golang package, it includes basic data validation functions and regexes.
 

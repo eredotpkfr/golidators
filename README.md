@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-  fmt.Println(goliators.Domain("www.example.com"))
+  fmt.Println(golidators.Domain("www.example.com"))
   // true
   fmt.Println(golidators.Ipv4("::1"))
   // false

@@ -90,4 +90,5 @@ const (
   "$"
 )
 
-var UrlRegex = rgx.MustCompile(make_case_insensitive(urlPattern))
+// URLRegex for validating URL data
+var URLRegex = rgx.MustCompile(makeCaseInsensitive(urlPattern))

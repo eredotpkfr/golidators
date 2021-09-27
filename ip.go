@@ -4,55 +4,57 @@ import utils "github.com/eredotpkfr/golidators/internal/utilities"
 
 const (
 	// IP CIDR seperator
-	cidr_sep = '/'
+	cidrSep = '/'
 
 	// 0xFF -> 255
-	ipv4_max_part = 0xFF
-	ipv4_length   = 4
+	ipv4MaxPart = 0xFF
+	ipv4Length   = 4
 
 	// 0xFFFF -> 65535
-	ipv6_max_part = 0xFFFF
-	ipv6_length   = 16
+	ipv6MaxPart = 0xFFFF
+	ipv6Length   = 16
 )
 
-func Ipv4(ipv4_addr string) bool {
-	for index := 0; index < ipv4_length; index++ {
+// Ipv4 function for validating IPv4
+func Ipv4(ipv4Addr string) bool {
+	for index := 0; index < ipv4Length; index++ {
 
-		if len(ipv4_addr) == 0 {
+		if len(ipv4Addr) == 0 {
 			return false
 		}
 
 		if index > 0 {
-			if ipv4_addr[0] != '.' {
+			if ipv4Addr[0] != '.' {
 				return false
 			}
 
-			ipv4_addr = ipv4_addr[1:]
+			ipv4Addr = ipv4Addr[1:]
 		}
 
-		number, consumed, ok := utils.Dtoi(ipv4_addr)
+		number, consumed, ok := utils.Dtoi(ipv4Addr)
 
-		if !ok || number > ipv4_max_part {
+		if !ok || number > ipv4MaxPart {
 			return false
 		}
 
-		if consumed > 1 && ipv4_addr[0] == '0' {
+		if consumed > 1 && ipv4Addr[0] == '0' {
 			return false
 		}
 
-		ipv4_addr = ipv4_addr[consumed:]
+		ipv4Addr = ipv4Addr[consumed:]
 
 	}
 
-	if len(ipv4_addr) != 0 {
+	if len(ipv4Addr) != 0 {
 		return false
 	}
 
 	return true
 }
 
-func Ipv4Cidr(ipv4_addr_cidr string) bool {
-	prefix, suffix, ok := utils.SplitOnce(ipv4_addr_cidr, cidr_sep)
+// Ipv4Cidr function for validating IPv4CIDR
+func Ipv4Cidr(ipv4AddrCidr string) bool {
+	prefix, suffix, ok := utils.SplitOnce(ipv4AddrCidr, cidrSep)
 
 	if !ok {
 		return false
@@ -67,75 +69,76 @@ func Ipv4Cidr(ipv4_addr_cidr string) bool {
 	return 0 <= number && number <= 32
 }
 
-func Ipv6(ipv6_addr string) bool {
+// Ipv6 function for validating IPv6
+func Ipv6(ipv6Addr string) bool {
 	ellipsis := -1
 
-	if len(ipv6_addr) >= 2 && ipv6_addr[0] == ':' && ipv6_addr[1] == ':' {
+	if len(ipv6Addr) >= 2 && ipv6Addr[0] == ':' && ipv6Addr[1] == ':' {
 		ellipsis = 0
-		ipv6_addr = ipv6_addr[2:]
+		ipv6Addr = ipv6Addr[2:]
 
-		if len(ipv6_addr) == 0 {
+		if len(ipv6Addr) == 0 {
 			return true
 		}
 	}
 
 	index := 0
-	for index < ipv6_length {
-		number, consumed, ok := utils.Xtoi(ipv6_addr)
+	for index < ipv6Length {
+		number, consumed, ok := utils.Xtoi(ipv6Addr)
 
-		if !ok || number > ipv6_max_part {
+		if !ok || number > ipv6MaxPart {
 			return false
 		}
 
-		if consumed < len(ipv6_addr) && ipv6_addr[consumed] == '.' {
-			if ellipsis < 0 && index != ipv6_length-ipv4_length {
+		if consumed < len(ipv6Addr) && ipv6Addr[consumed] == '.' {
+			if ellipsis < 0 && index != ipv6Length-ipv4Length {
 				return false
 			}
-			if index+ipv4_length > ipv6_length {
+			if index+ipv4Length > ipv6Length {
 				return false
 			}
-			if !Ipv4(ipv6_addr) {
+			if !Ipv4(ipv6Addr) {
 				return false
 			}
 
-			ipv6_addr = ""
-			index += ipv4_length
+			ipv6Addr = ""
+			index += ipv4Length
 			break
 		}
 
 		index += 2
 
-		ipv6_addr = ipv6_addr[consumed:]
-		if len(ipv6_addr) == 0 {
+		ipv6Addr = ipv6Addr[consumed:]
+		if len(ipv6Addr) == 0 {
 			break
 		}
 
-		if ipv6_addr[0] != ':' || len(ipv6_addr) == 1 {
+		if ipv6Addr[0] != ':' || len(ipv6Addr) == 1 {
 			return false
 		}
 
-		ipv6_addr = ipv6_addr[1:]
+		ipv6Addr = ipv6Addr[1:]
 
-		if ipv6_addr[0] == ':' {
+		if ipv6Addr[0] == ':' {
 			if ellipsis >= 0 {
 				return false
 			}
 
 			ellipsis = index
-			ipv6_addr = ipv6_addr[1:]
+			ipv6Addr = ipv6Addr[1:]
 
-			if len(ipv6_addr) == 0 {
+			if len(ipv6Addr) == 0 {
 				break
 			}
 
 		}
 	}
 
-	if len(ipv6_addr) != 0 {
+	if len(ipv6Addr) != 0 {
 		return false
 	}
 
-	if index < ipv6_length {
+	if index < ipv6Length {
 		if ellipsis < 0 {
 			return false
 		}
@@ -146,8 +149,9 @@ func Ipv6(ipv6_addr string) bool {
 	return true
 }
 
-func Ipv6Cidr(ipv6_addr_cidr string) bool {
-	prefix, suffix, ok := utils.SplitOnce(ipv6_addr_cidr, cidr_sep)
+// Ipv6Cidr function for validating IPv6CIDR
+func Ipv6Cidr(ipv6AddrCidr string) bool {
+	prefix, suffix, ok := utils.SplitOnce(ipv6AddrCidr, cidrSep)
 
 	if !ok {
 		return false

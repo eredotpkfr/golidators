@@ -5,6 +5,7 @@ import (
 	"golang.org/x/net/idna"
 )
 
+// Domain function for validating domains
 func Domain(domain string) bool {
 	var idnap *idna.Profile = idna.New()
 	domain, err := idnap.ToASCII(domain)

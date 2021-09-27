@@ -3,18 +3,18 @@ package utilities
 // 0xFFFFFF -> 16777215
 const big = 0xFFFFFF
 
-// Split once given string.
+// SplitOnce does split given string.
 // Returns prefix, suffix, success.
-func SplitOnce(target_str string, sep byte) (prefix, suffix string, ok bool) {
-    for i := 0; i < len(target_str); i++ {
-        if target_str[i] == sep {
-            return target_str[:i], target_str[i + 1:], true
+func SplitOnce(targetStr string, sep byte) (prefix, suffix string, ok bool) {
+    for i := 0; i < len(targetStr); i++ {
+        if targetStr[i] == sep {
+            return targetStr[:i], targetStr[i + 1:], true
         }
     }
     return "", "", false
 }
 
-// Hexadecimal to integer.
+// Xtoi is Hexadecimal to integer.
 // Returns number, characters consumed, success.
 // Official function definition is here: https://cs.opensource.google/go/go/+/refs/tags/go1.17.1:src/net/parse.go
 func Xtoi(s string) (n int, i int, ok bool) {
@@ -42,7 +42,7 @@ func Xtoi(s string) (n int, i int, ok bool) {
 	return n, i, true
 }
 
-// Decimal to integer.
+// Dtoi is Decimal to integer.
 // Returns number, characters consumed, success.
 // Official function definition is here: https://cs.opensource.google/go/go/+/refs/tags/go1.17.1:src/net/parse.go
 func Dtoi(s string) (n int, i int, ok bool) {

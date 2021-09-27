@@ -33,7 +33,7 @@ func main() {
   // false
   fmt.Println(golidators.Ipv6("::1"))
   // true
-  fmt.Println(golidators.Url("https://www.example.com"))
+  fmt.Println(golidators.URL("https://www.example.com"))
   // true
   fmt.Println(golidators.Ipv4Cidr("127.0.0.1/12"))
   // true

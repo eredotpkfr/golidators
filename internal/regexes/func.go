@@ -1,9 +1,9 @@
 package regexes
 
 // Ignore case prefix pattern for regex patterns
-const ignore_case string = "(?i)"
+const ignoreCase string = "(?i)"
 
-// Add IGNORE_CASE flag any regex pattern
-func make_case_insensitive(pattern string) string {
-  return ignore_case + pattern
+// Add ignoreCase flag any regex pattern
+func makeCaseInsensitive(pattern string) string {
+  return ignoreCase + pattern
 }

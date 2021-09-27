@@ -2,7 +2,7 @@ package golidators
 
 import "testing"
 
-var UuidCases = [7]StrTestRecord{
+var UUIDCases = [7]StrTestRecord{
 	{"2bc1c94f-0deb-43e9-92a1-4775189ec9f8", true},
 	{"d22877be-b0cf-4d81-99bf-242afba289a6", true},
 	{"D22877BE-B0CF-4D81-99BF-242AFBA289A6", true},
@@ -13,7 +13,7 @@ var UuidCases = [7]StrTestRecord{
 }
 
 func TestUuid(t *testing.T) {
-	for _, record := range UuidCases {
+	for _, record := range UUIDCases {
 		if Uuid(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}

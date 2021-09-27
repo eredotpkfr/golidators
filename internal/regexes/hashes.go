@@ -11,9 +11,14 @@ const (
 )
 
 var (
-  Md5Regex = rgx.MustCompile(make_case_insensitive(md5Pattern))
-  Sha1Regex = rgx.MustCompile(make_case_insensitive(sha1Pattern))
-  Sha224Regex = rgx.MustCompile(make_case_insensitive(sha224Pattern))
-  Sha256Regex = rgx.MustCompile(make_case_insensitive(sha256Pattern))
-  Sha512Regex = rgx.MustCompile(make_case_insensitive(sha512Pattern))
+  // Md5Regex for validating MD5
+  Md5Regex = rgx.MustCompile(makeCaseInsensitive(md5Pattern))
+  // Sha1Regex for validating SHA1
+  Sha1Regex = rgx.MustCompile(makeCaseInsensitive(sha1Pattern))
+  // Sha224Regex for validating SHA224
+  Sha224Regex = rgx.MustCompile(makeCaseInsensitive(sha224Pattern))
+  // Sha256Regex for validating SHA256
+  Sha256Regex = rgx.MustCompile(makeCaseInsensitive(sha256Pattern))
+  // Sha512Regex for validating SHA512
+  Sha512Regex = rgx.MustCompile(makeCaseInsensitive(sha512Pattern))
 )

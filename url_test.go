@@ -2,7 +2,7 @@ package golidators
 
 import "testing"
 
-var UrlCases = [118]StrTestRecord{
+var URLCases = [118]StrTestRecord{
 	{"http://foobar.dk", true},
 	{"http://foobar.museum/foobar", true},
 	{"http://fo.com", true},
@@ -124,7 +124,7 @@ var UrlCases = [118]StrTestRecord{
 }
 
 func TestUrl(t *testing.T) {
-	for _, record := range UrlCases {
+	for _, record := range URLCases {
 		if Url(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}

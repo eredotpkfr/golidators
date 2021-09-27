@@ -2,6 +2,7 @@ package golidators
 
 import "github.com/eredotpkfr/golidators/internal/regexes"
 
-func Mac(mac_addr string) bool {
-	return regexes.MacRegex.MatchString(mac_addr)
+// Mac function for validating MAC Addresses
+func Mac(macAddr string) bool {
+	return regexes.MacRegex.MatchString(macAddr)
 }

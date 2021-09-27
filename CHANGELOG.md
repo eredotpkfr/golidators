@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
-## 0.1.3 - 2020-09-27
+## 0.1.3 - 2021-09-27
 ### Added
 - Added following validators:
   - Domain

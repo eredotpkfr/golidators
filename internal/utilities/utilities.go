@@ -3,17 +3,6 @@ package utilities
 // 0xFFFFFF -> 16777215
 const big = 0xFFFFFF
 
-// SplitOnce does split given string.
-// Returns prefix, suffix, success.
-func SplitOnce(targetStr string, sep byte) (prefix, suffix string, ok bool) {
-	for i := 0; i < len(targetStr); i++ {
-		if targetStr[i] == sep {
-			return targetStr[:i], targetStr[i+1:], true
-		}
-	}
-	return "", "", false
-}
-
 // Xtoi is Hexadecimal to integer.
 // Returns number, characters consumed, success.
 // Official function definition is here: https://cs.opensource.google/go/go/+/refs/tags/go1.17.1:src/net/parse.go

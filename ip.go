@@ -1,10 +1,14 @@
 package golidators
 
-import utils "github.com/eredotpkfr/golidators/internal/utilities"
+import (
+	"strings"
+
+	utils "github.com/eredotpkfr/golidators/internal/utilities"
+)
 
 const (
 	// IP CIDR separator
-	cidrSep = '/'
+	cidrSep = "/"
 
 	// 0xFF -> 255
 	ipv4MaxPart = 0xFF
@@ -54,12 +58,13 @@ func Ipv4(ipv4Addr string) bool {
 
 // Ipv4Cidr function for validating IPv4CIDR
 func Ipv4Cidr(ipv4AddrCidr string) bool {
-	prefix, suffix, ok := utils.SplitOnce(ipv4AddrCidr, cidrSep)
+	splitted := strings.Split(ipv4AddrCidr, cidrSep)
 
-	if !ok {
+	if len(splitted) != 2 {
 		return false
 	}
 
+	prefix, suffix := splitted[0], splitted[1]
 	number, consumed, ok := utils.Dtoi(suffix)
 
 	if !ok || !Ipv4(prefix) || consumed > 2 {
@@ -151,12 +156,13 @@ func Ipv6(ipv6Addr string) bool {
 
 // Ipv6Cidr function for validating IPv6CIDR
 func Ipv6Cidr(ipv6AddrCidr string) bool {
-	prefix, suffix, ok := utils.SplitOnce(ipv6AddrCidr, cidrSep)
+	splitted := strings.Split(ipv6AddrCidr, cidrSep)
 
-	if !ok {
+	if len(splitted) != 2 {
 		return false
 	}
 
+	prefix, suffix := splitted[0], splitted[1]
 	number, consumed, ok := utils.Dtoi(suffix)
 
 	if !ok || !Ipv6(prefix) || consumed > 3 {

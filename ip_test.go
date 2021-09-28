@@ -15,7 +15,7 @@ var (
 		{"900.200.100.75", false},
 		{"10.0.0.0:8080", false},
 	}
-	Ipv4CidrCases = [10]StrTestRecord{
+	Ipv4CidrCases = [15]StrTestRecord{
 		{"127.0.0.1/0", true},
 		{"123.5.77.88/8", true},
 		{"12.12.12.12/32", true},
@@ -26,6 +26,11 @@ var (
 		{"1.1.1.1/foo", false},
 		{"127.0.0.2/44", false},
 		{"foo/bar", false},
+		{"127.0.0.1/12/13/14", false},
+		{"/", false},
+		{"///", false},
+		{"foo/bar/", false},
+		{"/foo/bar", false},
 	}
 	Ipv6Cases = [10]StrTestRecord{
 		{"::1", true},
@@ -39,7 +44,7 @@ var (
 		{"1:2:3:4:5:6:7:8:9", false},
 		{"abcd::1ffff", false},
 	}
-	Ipv6CidrCases = [15]StrTestRecord{
+	Ipv6CidrCases = [20]StrTestRecord{
 		{"::1/0", true},
 		{"dead:beef:0:0:0:0:42:1/8", true},
 		{"abcd:ef::42:1/32", true},
@@ -55,6 +60,11 @@ var (
 		{"::1/-1", false},
 		{"::1/foo", false},
 		{"::1/144", false},
+		{"127.0.0.1/12/13/14", false},
+		{"/", false},
+		{"///", false},
+		{"foo/bar/", false},
+		{"/foo/bar", false},
 	}
 )
 

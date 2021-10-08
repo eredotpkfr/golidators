@@ -4,6 +4,7 @@
 [![Go Version](https://img.shields.io/github/go-mod/go-version/eredotpkfr/golidators)](https://golang.org/)
 [![Release](https://img.shields.io/github/v/release/eredotpkfr/golidators)](https://github.com/eredotpkfr/golidators/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/eredotpkfr/golidators/blob/main/LICENSE)
+[![Stars](https://img.shields.io/github/stars/eredotpkfr/golidators?style=social)](https://github.com/eredotpkfr/golidators/stargazers)
 # golidators
 Golidators is a golang package, it includes basic data validation functions and regexes.
 

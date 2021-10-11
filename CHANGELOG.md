@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+## 0.1.5 - 2021-10-11
+### Added
+- Extended IP test cases
+
 ## 0.1.4 - 2021-09-28
 ### Fixed
 - Fixed critical bug in `Ipv4Cidr` and `Ipv6Cidr` validators. For details [issue #1](https://github.com/eredotpkfr/golidators/issues/1)

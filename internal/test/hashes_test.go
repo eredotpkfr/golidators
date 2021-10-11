@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var (
 	Md5Cases = [4]StrTestRecord{
@@ -37,7 +40,7 @@ var (
 
 func TestMd5(t *testing.T) {
 	for _, record := range Md5Cases {
-		if Md5(record.TargetValue) != record.Expected {
+		if golidators.Md5(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}
@@ -45,7 +48,7 @@ func TestMd5(t *testing.T) {
 
 func TestSha1(t *testing.T) {
 	for _, record := range Sha1Cases {
-		if Sha1(record.TargetValue) != record.Expected {
+		if golidators.Sha1(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}
@@ -53,7 +56,7 @@ func TestSha1(t *testing.T) {
 
 func TestSha224(t *testing.T) {
 	for _, record := range Sha224Cases {
-		if Sha224(record.TargetValue) != record.Expected {
+		if golidators.Sha224(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}
@@ -61,7 +64,7 @@ func TestSha224(t *testing.T) {
 
 func TestSha256(t *testing.T) {
 	for _, record := range Sha256Cases {
-		if Sha256(record.TargetValue) != record.Expected {
+		if golidators.Sha256(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}
@@ -69,7 +72,7 @@ func TestSha256(t *testing.T) {
 
 func TestSha512(t *testing.T) {
 	for _, record := range Sha512Cases {
-		if Sha512(record.TargetValue) != record.Expected {
+		if golidators.Sha512(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

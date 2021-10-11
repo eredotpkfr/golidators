@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var MacCases = [7]StrTestRecord{
 	{"01:23:45:67:ab:CD", true},
@@ -14,7 +17,7 @@ var MacCases = [7]StrTestRecord{
 
 func TestMac(t *testing.T) {
 	for _, record := range MacCases {
-		if Mac(record.TargetValue) != record.Expected {
+		if golidators.Mac(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

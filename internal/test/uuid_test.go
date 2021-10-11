@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var UUIDCases = [7]StrTestRecord{
 	{"2bc1c94f-0deb-43e9-92a1-4775189ec9f8", true},
@@ -14,7 +17,7 @@ var UUIDCases = [7]StrTestRecord{
 
 func TestUuid(t *testing.T) {
 	for _, record := range UUIDCases {
-		if Uuid(record.TargetValue) != record.Expected {
+		if golidators.Uuid(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

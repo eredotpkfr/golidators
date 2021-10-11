@@ -1,4 +1,4 @@
-package golidators
+package test
 
 // IntTestRecord for store int test data
 type IntTestRecord struct {

@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var URLCases = [118]StrTestRecord{
 	{"http://foobar.dk", true},
@@ -125,7 +128,7 @@ var URLCases = [118]StrTestRecord{
 
 func TestUrl(t *testing.T) {
 	for _, record := range URLCases {
-		if Url(record.TargetValue) != record.Expected {
+		if golidators.Url(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

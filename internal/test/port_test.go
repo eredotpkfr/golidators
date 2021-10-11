@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var PortCases = [5]IntTestRecord{
 	{12, true},
@@ -12,7 +15,7 @@ var PortCases = [5]IntTestRecord{
 
 func TestPort(t *testing.T) {
 	for _, record := range PortCases {
-		if Port(record.TargetValue) != record.Expected {
+		if golidators.Port(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

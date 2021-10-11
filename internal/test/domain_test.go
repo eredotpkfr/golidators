@@ -1,6 +1,9 @@
-package golidators
+package test
 
-import "testing"
+import (
+	"github.com/eredotpkfr/golidators"
+	"testing"
+)
 
 var DomainCases = [35]StrTestRecord{
 	{"example.com", true},
@@ -42,7 +45,7 @@ var DomainCases = [35]StrTestRecord{
 
 func TestDomain(t *testing.T) {
 	for _, record := range DomainCases {
-		if Domain(record.TargetValue) != record.Expected {
+		if golidators.Domain(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}
 	}

@@ -10,7 +10,7 @@ Golidators is a golang package, it includes basic data validation functions and 
 
 ## Install
 ```bash
-go get github.com/eredotpkfr/golidators
+$ go get github.com/eredotpkfr/golidators
 ```
 
 ## Overview

@@ -20,7 +20,7 @@ var CreditCardCases = [10]IntTestRecord{
 }
 
 func TestCreditCard(t *testing.T) {
-	for _, record := range LuhnCases {
+	for _, record := range CreditCardCases {
 		if golidators.CreditCard(record.TargetValue) != record.Expected {
 			t.Error(record.TargetValue)
 		}

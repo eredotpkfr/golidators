@@ -8,7 +8,7 @@
 
 # golidators
 
-Golidators is a golang package, it includes basic data validation functions and regexes.
+Golidators is a golang package, it includes basic data validation functions and regexes
 
 ## Install
 

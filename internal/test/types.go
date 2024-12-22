@@ -6,6 +6,12 @@ type IntTestRecord struct {
 	Expected    bool
 }
 
+// IntTestRecordWithIntReturn for store int test data
+type IntTestRecordWithIntReturn struct {
+	TargetValue int
+	Expected    int
+}
+
 // StrTestRecord for store string test data
 type StrTestRecord struct {
 	TargetValue string

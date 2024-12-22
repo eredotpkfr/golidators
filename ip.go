@@ -49,11 +49,7 @@ func Ipv4(ipv4Addr string) bool {
 
 	}
 
-	if len(ipv4Addr) != 0 {
-		return false
-	}
-
-	return true
+	return len(ipv4Addr) == 0
 }
 
 // Ipv4Cidr function for validating IPv4CIDR

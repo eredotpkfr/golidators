@@ -1,8 +1,9 @@
 package test
 
 import (
-	"github.com/eredotpkfr/golidators"
 	"testing"
+
+	"github.com/eredotpkfr/golidators"
 )
 
 var PortCases = [5]IntTestRecord{
